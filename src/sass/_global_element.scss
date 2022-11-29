@@ -1,0 +1,25 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  background-color: #01383a;
+  color: white;
+}
+
+.container {
+  padding: 0 17px;
+  margin: 0 auto;
+
+  @include mobile {
+    width: $mobile;
+  }
+
+  @include tablet {
+    width: $tablet;
+    padding: 0 40px;
+  }
+
+  @include desktop {
+    width: $desktop;
+  }
+}

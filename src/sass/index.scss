@@ -1,0 +1,23 @@
+@import './fonts';
+@import './common';
+@import './reset';
+@import './vars';
+@import './utils';
+
+@import './global_element';
+@import './elements/background';
+@import './elements/instruction';
+@import './elements/title_line';
+
+@import './sections/header';
+@import './sections/hero';
+@import './sections/slider';
+@import './sections/sale';
+@import './sections/filter';
+@import './sections/all_accessories';
+@import './sections/take_order';
+@import './sections/contacts_us';
+@import './sections/contacts';
+@import './sections/blogs';
+@import './sections/blog_art';
+@import './sections/footer';

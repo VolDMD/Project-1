@@ -1,0 +1,214 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  height: 104px;
+  z-index: 999;
+
+  @include tablet {
+    height: 136px;
+  }
+
+  .header-wraper {
+    width: 100%;
+  }
+
+  .header-wraper2 {
+    position: relative;
+    z-index: 998;
+    background: $bgc-header;
+    box-shadow: $box-shadow-header;
+  }
+
+  .header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    padding-top: 24px;
+
+    @include tablet {
+      padding-bottom: 40px;
+      padding-top: 40px;
+    }
+  }
+
+  .text-link {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.17;
+    text-align: center;
+    text-transform: uppercase;
+    color: $text-color-header;
+    outline: none;
+    width: 115px;
+    height: 56px;
+  }
+
+  .navigation__container {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .site-nav__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+      gap: 48px;
+    }
+  }
+
+  .site-nav__link {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.17;
+    text-align: right;
+    text-transform: uppercase;
+    color: $text-color-header;
+    padding: 8px 0;
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid #86e543;
+      outline: none;
+    }
+
+    @include tablet {
+      font-size: 32px;
+      line-height: 1.19;
+      text-align: right;
+    }
+
+    @include desktop {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+    }
+  }
+
+  .menu-button {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .menu-button .icon-cross {
+    display: none;
+  }
+
+  .menu-button.is-open .icon-cross {
+    display: block;
+  }
+
+  .menu-button.is-open .icon-menu {
+    display: none;
+  }
+
+  .menu-container {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 900;
+    background-color: #001414;
+
+    transform: translateY(-100%);
+    transition: transform 0.5s linear;
+
+    &.is-open {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      transform: translateY(0%);
+
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+
+  .menu__wraper {
+    width: 100%;
+    max-width: $mobile;
+    margin: 0 auto;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 64px;
+
+    background-position: left top;
+    background-repeat: repeat-y;
+    background-size: contain;
+
+    background-image: url(./../images/background/bg_menu_mobile-1x.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('./../images/background/bg_menu_mobile-2x.jpg');
+    }
+
+    @include tablet {
+      padding-top: 120px;
+      width: $tablet;
+      max-width: 100%;
+
+      background-size: cover;
+
+      background-image: url(./../images/background/bg_menu_tablet-1x.jpg);
+
+      @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        background-image: url('./../images/background/bg_menu_tablet-2x.jpg');
+      }
+    }
+  }
+
+  .button {
+    display: none;
+
+    @include tablet {
+      display: block;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 100%;
+      text-align: right;
+      border: none;
+      padding: 16px 20px;
+      color: #000;
+      background: #86e543;
+      border-radius: 16px;
+      transition: box-shadow 250ms linear;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0px 8px 20px rgba(134, 229, 67, 0.5),
+          0px 4px 10px rgba(255, 255, 255, 0.1);
+        outline: none;
+      }
+    }
+  }
+}
